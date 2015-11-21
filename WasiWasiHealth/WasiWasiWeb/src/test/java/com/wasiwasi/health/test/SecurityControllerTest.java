@@ -21,6 +21,4 @@ public class SecurityControllerTest {
 		Assert.assertEquals("accessDenied", view);
 		Assert.assertEquals("dummyUser", modelMap.get("user"));
 	}
-	
-	
 }

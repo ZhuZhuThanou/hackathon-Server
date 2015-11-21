@@ -12,6 +12,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class SuccessHandler implements AuthenticationSuccessHandler {
 
 	public void onAuthenticationSuccess(HttpServletRequest req, HttpServletResponse resp, Authentication autho) throws IOException, ServletException {
-		resp.sendRedirect(req.getContextPath() + "/provider");
+		resp.sendRedirect(req.getContextPath() + "/admin");
 	}
 }

@@ -59,8 +59,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="one-half column" style="margin-top: 0%">
-					<label for="userEmailInput">Your email</label> <input
-						class="u-full-width" type="email" placeholder="test@mailbox.com"
+					<label for="userEmailInput">Your Username</label> <input
+						class="u-full-width" type="text" placeholder="username..."
 						id="userEmailInput" name="ssoId">
 				</div>
 				<div class="one-half column" style="margin-top: 0%">

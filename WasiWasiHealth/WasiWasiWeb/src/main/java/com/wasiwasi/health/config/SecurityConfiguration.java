@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	       
 	      http.authorizeRequests()
 	        .antMatchers("/").permitAll()
-	        .antMatchers("/provider/**").access("hasRole('PROVIDER')")
+	        .antMatchers("/admin/**").access("hasRole('ADMIN')")
 	        .and().formLogin().loginPage("/login")
 	        .successHandler(config.loginSuccessHandler())
 	        .usernameParameter("ssoId").passwordParameter("password")

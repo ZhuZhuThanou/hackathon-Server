@@ -32,5 +32,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/springframework/security/spring-security-web/4.0.1.RELEASE/spring-security-web-4.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/4.0.1.RELEASE/spring-jdbc-4.0.1.RELEASE.jar"/>
 	<classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/4.0.1.RELEASE/spring-tx-4.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/BTS - Cloud/WEB-INF/lib/jasypt-1.9.0.jar"/>
 	<classpathentry kind="output" path="target/WasiWasiWeb/WEB-INF/classes"/>
 </classpath>

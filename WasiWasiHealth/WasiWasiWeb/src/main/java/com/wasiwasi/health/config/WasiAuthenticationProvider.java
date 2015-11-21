@@ -12,20 +12,25 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.wasiwasi.health.dao.HealthCareProviderDao;
-import com.wasiwasi.health.model.HealthCareProvider;
+import com.wasiwasi.health.service.AdminService;
 
 public class WasiAuthenticationProvider implements AuthenticationProvider {
 	
 	@Autowired
 	private HealthCareProviderDao careProviderDao;
 	
+	@Autowired
+	private AdminService adminService;
+	
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 		String userName = auth.getName();
 		String pwd = auth.getCredentials().toString();
-		HealthCareProvider provider = careProviderDao.findByEmail(userName);
+		
+		boolean validated = adminService.validate(userName, pwd);
+		//HealthCareProvider provider = careProviderDao.findByEmail(userName);
 		//if (provider != null && provider.getPwd().equals(pwd)) {
 			List<GrantedAuthority> gaList = new ArrayList<GrantedAuthority>();
-			GrantedAuthority ga = new SimpleGrantedAuthority("ROLE_PROVIDER");
+			GrantedAuthority ga = new SimpleGrantedAuthority("ROLE_ADMIN");
 			gaList.add(ga);
 			return new UsernamePasswordAuthenticationToken(auth.getPrincipal(), null, gaList);					
 //		} else {

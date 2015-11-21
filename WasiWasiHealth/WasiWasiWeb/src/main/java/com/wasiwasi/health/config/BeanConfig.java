@@ -13,8 +13,12 @@ import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import com.google.gson.Gson;
+import com.wasiwasi.health.dao.AdminDao;
+import com.wasiwasi.health.dao.AdminDaoImpl;
 import com.wasiwasi.health.dao.HealthCareProviderDao;
 import com.wasiwasi.health.dao.HealthCareProviderDaoImpl;
+import com.wasiwasi.health.service.AdminService;
+import com.wasiwasi.health.service.AdminServiceImpl;
 
 @Configuration
 public class BeanConfig {
@@ -41,15 +45,23 @@ public class BeanConfig {
 	public DataSource dataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("org.postgresql.Driver");
-		ds.setUrl("jdbc:postgresql://localhost:5432/hipposdb");
-		ds.setUsername("hiplp");
-		ds.setPassword("qweasdzxc");
+		ds.setUrl("jdbc:postgresql://localhost:5432/wasiwasidb");
+		ds.setUsername("wasiwasi");
+		ds.setPassword("qweasdzxc123");
 		ds.setRemoveAbandoned(true);
 		ds.setInitialSize(10);
 		ds.setMaxActive(30);
 		return ds;
 	}
     
+    
+    @Bean
+    public AdminDao adminDao() {
+    	AdminDaoImpl dao = new AdminDaoImpl();
+    	dao.setDataSource(dataSource());
+    	dao.setGson(gson());
+    	return dao;
+    }
     
     @Bean
     public HealthCareProviderDao careProviderDao() {
@@ -63,5 +75,13 @@ public class BeanConfig {
     @Bean 
     public Gson gson() {
     	return new Gson();
+    }
+    
+    /** 
+     * Services
+     */
+    @Bean
+    public AdminService adminService() {
+    	return new AdminServiceImpl();
     }
 }
