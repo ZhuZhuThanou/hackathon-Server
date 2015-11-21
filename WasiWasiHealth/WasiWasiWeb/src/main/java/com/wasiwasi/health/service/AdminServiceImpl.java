@@ -1,7 +1,5 @@
 package com.wasiwasi.health.service;
 
-import java.util.UUID;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,12 +13,11 @@ public class AdminServiceImpl implements AdminService {
 	@Autowired AdminDao adminDao;
 	
 	public boolean doesAdminExists() {
-		return false;
+		return adminDao.count() > 0;
 	}
 
 	public boolean addDefaultAdmin() {
 		Admin admin = new Admin();
-		admin.setId(UUID.randomUUID().toString());
 		admin.setEmail("admin@sample.com");
 		admin.setUid("admin");
 		admin.setPassword("admin");

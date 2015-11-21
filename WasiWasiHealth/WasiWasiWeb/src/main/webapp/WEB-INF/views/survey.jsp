@@ -6,7 +6,7 @@
 
   <!-- Basic Page Needs -->
   <meta charset="utf-8">
-  <title>WasiWasi Admin</title>
+  <title>Hip-POS Vendor</title>
   <meta name="description" content="">
   <meta name="author" content="">
 

@@ -40,7 +40,7 @@ public class AdminDaoImpl extends AbstractDao implements AdminDao {
 		String id = UUID.randomUUID().toString() + System.currentTimeMillis();
 		admin.setId(id);
 		String sql = "insert into admin_user(id, email, uid, pwd) values(?,?,?,?)";
-		int count = getJdbcTemplate().update(sql, id, admin.getUid(), admin.getPassword());
+		int count = getJdbcTemplate().update(sql, id, admin.getEmail(), admin.getUid(), admin.getPassword());
 		success = count == 1;
 		if (success) admin.setId(id);
 		log.info("admin insert success ? " + success + " new admin " + admin.getEmail());
@@ -53,13 +53,12 @@ public class AdminDaoImpl extends AbstractDao implements AdminDao {
 	}
 
 	private Admin populate(ResultSet rs) throws SQLException {
-		String json = rs.getString("json_data");
 		Admin admin = new Admin();
 		admin.setId(rs.getString("id"));
 		admin.setEmail(rs.getString("email"));
 		admin.setUid(rs.getString("uid"));
 		admin.setPassword(rs.getString("pwd"));
-		return getGson().fromJson(json, Admin.class);
+		return admin;
 	}
 
 	public Admin findByEmail(String email) {

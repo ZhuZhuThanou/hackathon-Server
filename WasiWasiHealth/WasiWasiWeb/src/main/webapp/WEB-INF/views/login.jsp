@@ -29,10 +29,10 @@
 		<div class="row">
 			<div class="one-half column" style="margin-top: 5%">
 				<a class="button" href="index.html">Home</a>
-				<h2>WasiWasi</h2>
+				<h2>WasiWasi Health</h2>
 				<h3>Login Page</h3>
 			</div>
-			<div class="one-half column">
+			<div class="one-half column" style="margin-top: 5%">
 				<img src="images/hipPOSLogoSmall.png" />
 			</div>
 		</div>
