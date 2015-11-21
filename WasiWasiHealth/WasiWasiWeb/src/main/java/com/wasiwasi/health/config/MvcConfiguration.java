@@ -22,10 +22,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         viewResolver.setViewClass(JstlView.class);
         viewResolver.setPrefix("/WEB-INF/views/"); // this tells where the view folders area
         viewResolver.setSuffix(".jsp"); // the suffix of a view file
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-        for (StackTraceElement e: stackTrace) {
-        	//System.out.println(e.toString());
-        }
         return viewResolver;
     }
  
