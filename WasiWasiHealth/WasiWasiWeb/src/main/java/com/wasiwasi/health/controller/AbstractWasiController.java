@@ -17,4 +17,8 @@ public abstract class AbstractWasiController {
         }
         return userName;
     }	
+    
+    protected String exitSession() {
+    	return "redirect:/login?logout";
+    }
 }

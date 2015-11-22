@@ -11,11 +11,24 @@ Additional style for hip POS
 	background-color: #CFCFCF;
 }
 
+.itembox { 
+    position: relative;
+    float:left; 
+} 
+
+.RemoveMediaNotif { 
+    position: absolute;
+    right: 0px;
+    top: 0px; 
+    text-decoration:underline; 
+    cursor: pointer;
+    background-image:images/closeIcon.png;
+} 
 
 #overlayForm {
      visibility: hidden;
      position: absolute;
-     background: #ffffcc;
+     background: #ccffff;  /* baby blue */
      left: 200px;
      top: 100px;
      width:100%;

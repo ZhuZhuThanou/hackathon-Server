@@ -10,17 +10,17 @@ import com.wasiwasi.health.model.Admin;
 import com.wasiwasi.health.service.AdminService;
 
 @Controller
-public class AdminController extends AbstractWasiController {
+public class SurveyListController extends AbstractWasiController {
 
 	@Autowired AdminService adminService;
 	
-	@RequestMapping(value ="/admin", method = RequestMethod.GET)
-    public String initProvider(ModelMap model) {
+	@RequestMapping(value ="/survey", method = RequestMethod.GET)
+    public String initSurveyList(ModelMap model) {
 		String user = getPrincipal();
 		Admin admin = adminService.findByUser(user);
 		if (admin != null) {
 			model.addAttribute("userId", admin.getId());
-			return "admin";
+			return "survey";
 		} else {
 			return exitSession();
 		}

@@ -17,8 +17,12 @@ import com.wasiwasi.health.dao.AdminDao;
 import com.wasiwasi.health.dao.AdminDaoImpl;
 import com.wasiwasi.health.dao.HealthCareProviderDao;
 import com.wasiwasi.health.dao.HealthCareProviderDaoImpl;
+import com.wasiwasi.health.dao.SurveyDao;
+import com.wasiwasi.health.dao.SurveyDaoImpl;
 import com.wasiwasi.health.service.AdminService;
 import com.wasiwasi.health.service.AdminServiceImpl;
+import com.wasiwasi.health.service.SurveyService;
+import com.wasiwasi.health.service.SurveyServiceImpl;
 
 @Configuration
 public class BeanConfig {
@@ -71,6 +75,14 @@ public class BeanConfig {
     	return dao;
     }
     
+    @Bean
+    public SurveyDao surveyDao() {
+    	SurveyDaoImpl dao = new SurveyDaoImpl();
+    	dao.setDataSource(dataSource());
+    	dao.setGson(gson());
+    	return dao;
+    }
+    
     
     @Bean 
     public Gson gson() {
@@ -83,5 +95,10 @@ public class BeanConfig {
     @Bean
     public AdminService adminService() {
     	return new AdminServiceImpl();
+    }
+    
+    @Bean
+    public SurveyService surveyService() {
+    	return new SurveyServiceImpl();
     }
 }
