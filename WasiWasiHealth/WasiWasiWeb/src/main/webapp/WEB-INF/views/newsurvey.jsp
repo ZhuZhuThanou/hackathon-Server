@@ -69,7 +69,7 @@
 			</div>
 			<div class="row">
 				<div class="one-half column">
-					<button data-bind="click: $root.save" class="button primary-button">Create Survey</button>
+					<button data-bind="click: $root.save" class="button primary-button">Save Survey</button>
 				</div>
 			</div>
 		</form>
