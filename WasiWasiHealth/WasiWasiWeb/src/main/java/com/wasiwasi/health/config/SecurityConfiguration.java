@@ -23,8 +23,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	       
 	      http.authorizeRequests()
 	        .antMatchers("/").permitAll()
-	        .antMatchers("/admin/**").access("hasRole('ADMIN')")
+	        .antMatchers("/smsstatus").permitAll()	        
+	        .antMatchers("/sms/**").access("hasRole('ADMIN')")
 	        .antMatchers("/survey/**").access("hasRole('ADMIN')")
+	        .antMatchers("/admin/**").access("hasRole('ADMIN')")
 	        .antMatchers("/newsurvey/**").access("hasRole('ADMIN')")
 	        .and().formLogin().loginPage("/login")
 	        .successHandler(config.loginSuccessHandler())

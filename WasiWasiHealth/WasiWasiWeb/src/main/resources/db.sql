@@ -22,3 +22,13 @@ create table survey (
 	modified_ts		timestamp
 	);
 	
+#Revision - 3
+create table survey_question ( 
+	id				varchar(100) primary key, 
+	survey_id		varchar(100) not null,
+	json_data		text);	
+	
+create table sms(
+	id				varchar(100) primary key,
+	json_data		text);
+	

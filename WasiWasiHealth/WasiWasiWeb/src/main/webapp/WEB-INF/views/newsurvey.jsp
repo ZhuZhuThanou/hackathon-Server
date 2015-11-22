@@ -50,68 +50,68 @@
 	</div>
 	<div class="container" id="newSurveyDiv" data-bind="with: surveyModel">
 		<form>
-			<input type="hidden" id="csrfHeader" value="${_csrf.headerName}" /> 
-			<input type="hidden" id="csrfToken" value="${_csrf.token}" />
-			<input type="hidden" name="id" data-bind="value: id" />
+			<input type="hidden" id="csrfHeader" value="${_csrf.headerName}" />
+			<input type="hidden" id="csrfToken" value="${_csrf.token}" /> <input
+				type="hidden" name="id" data-bind="value: id" />
 			<div class="row">
 				<div class="one-half column" style="margin-top: 0%">
-					<label for="surveyNameInput">Survey Name</label> 
-					<input data-bind="value: name"
-						class="u-full-width" type="text" placeholder="survey name"
-						id="surveyNameInput" name="surveyNameInput">
+					<label for="surveyNameInput">Survey Name</label> <input
+						data-bind="value: name" class="u-full-width" type="text"
+						placeholder="survey name" id="surveyNameInput"
+						name="surveyNameInput">
 				</div>
 				<div class="one-half column" style="margin-top: 0%">
-					<label for="surveyActivationDate">Activation Date</label> 
-					<input data-bind="value: activationDate"
-						class="u-full-width" type="date" id="activationDateInput"
-						name="activationDateInput">
+					<label for="surveyActivationDate">Activation Date</label> <input
+						data-bind="value: activationDate" class="u-full-width" type="date"
+						id="activationDateInput" name="activationDateInput">
 				</div>
 			</div>
 			<div class="row">
 				<div class="one-half column">
-					<button data-bind="click: $root.save" class="button primary-button">Save Survey</button>
+					<button data-bind="click: $root.saveSurveyModel"
+						class="button primary-button">Save Survey</button>
+					&nbsp;&nbsp;
+					<a class="button primary-button" href="#" id="createAQuestion">Create
+					A Question</a>
 				</div>
 			</div>
 		</form>
 	</div>
-	<div class="container" id="createdSurveyDiv"></div>
-	<div class="container" id="newQuestionDiv">
-		<div class="row">
-			<div class="one-half column">
-				<a class="button primary-button" href="#">Create A Question</a>
-			</div>
-		</div>
+	<div class="container" id="surveyQuestionDiv">
+			<form>
+				<div class="row">
+					<div class="one-half column" style="margin-top: 0%">
+						<label for="surveyQuestionInput">Your Question</label> <input
+							class="u-full-width" type="text" placeholder="question"
+							id="surveyQuestionInput" name="surveyQuestionInput">
+					</div>
+					<div class="one-half column" style="margin-top: 0%">
+						<label for="surveyQuectionLegendInput">Response Legend</label> <input
+							class="u-full-width" type="text" id="surveyQuectionLegendInput"
+							name="surveyQuectionLegendInput">
+					</div>
+				</div>
+				<div class="row">
+					<div class="one-half column">
+						<button 
+							class="button primary-button" id="saveAndSendQuestionButton">Save and Send Question</button>
+						&nbsp;&nbsp;
+					</div>
+				</div>
+			</form>
 	</div>
-
 	<div class="container" id="questionListDiv">
-		<table>
+		<table class="u-full-width" id="questionTable">
 			<thead>
 				<tr>
 					<th></th>
 					<th>Question</th>
-					<th>Name</th>
-					<th>% Completed</th>
-					<th># Participants
+					<th>Responses</th>
 				</tr>
 			</thead>
-			<!-- 
-    			<tbody data-bind="foreach: surveyList">
-    				<tr>
-    					<td><a class="button button-primary" href="#" data-bind="click: $parent.viewSurvey">Edit</a>
-    					<td data-bind="text:surveyDate"></td>
-    					<td data-bind="text:surveyName"></td>
-    					<td data-bind="text:percentCompleted"></td>
-    					<td data-bind="text:participantNumber"></td>
-    				</tr>	
-    			</tbody>
-    			-->
 		</table>
 	</div>
-	<div class="container" id="overlayForm">
-		<div class="RemoveMediaNotif">
-			<img src="images/closeIcon.png" id="closeDialogButton" />
-		</div>
-	</div>
+	
 
 	<!-- End Document -->
 </body>

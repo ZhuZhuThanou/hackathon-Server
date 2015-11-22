@@ -17,10 +17,16 @@ import com.wasiwasi.health.dao.AdminDao;
 import com.wasiwasi.health.dao.AdminDaoImpl;
 import com.wasiwasi.health.dao.HealthCareProviderDao;
 import com.wasiwasi.health.dao.HealthCareProviderDaoImpl;
+import com.wasiwasi.health.dao.SmsDao;
+import com.wasiwasi.health.dao.SmsDaoImpl;
 import com.wasiwasi.health.dao.SurveyDao;
 import com.wasiwasi.health.dao.SurveyDaoImpl;
+import com.wasiwasi.health.dao.SurveyQuestionDao;
+import com.wasiwasi.health.dao.SurveyQuestionDaoImpl;
 import com.wasiwasi.health.service.AdminService;
 import com.wasiwasi.health.service.AdminServiceImpl;
+import com.wasiwasi.health.service.SurveyQuestionService;
+import com.wasiwasi.health.service.SurveyQuestionServiceImpl;
 import com.wasiwasi.health.service.SurveyService;
 import com.wasiwasi.health.service.SurveyServiceImpl;
 
@@ -83,7 +89,20 @@ public class BeanConfig {
     	return dao;
     }
     
-    
+    @Bean
+    public SurveyQuestionDao surveyQuestionDao() {
+    	SurveyQuestionDaoImpl dao = new SurveyQuestionDaoImpl();
+    	dao.setDataSource(dataSource());
+    	dao.setGson(gson());
+    	return dao;
+    }
+    @Bean
+    public SmsDao smsDao() {
+    	SmsDaoImpl dao = new SmsDaoImpl();
+    	dao.setDataSource(dataSource());
+    	dao.setGson(gson());
+    	return dao;
+    }
     @Bean 
     public Gson gson() {
     	return new Gson();
@@ -100,5 +119,10 @@ public class BeanConfig {
     @Bean
     public SurveyService surveyService() {
     	return new SurveyServiceImpl();
+    }
+    
+    @Bean
+    public SurveyQuestionService surveyQuestionService() {
+    	return new SurveyQuestionServiceImpl();
     }
 }

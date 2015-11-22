@@ -24,6 +24,7 @@
   <!-- JavaScripts -->
   <script type="text/javascript"  src="js/jquery-1.11.1.min.js"></script>
   <script type="text/javascript"  src="js/knockout-3.4.0.js"></script>
+  <script type="text/javascript"  src="js/d3.v2.js"></script>
   <script type="text/javascript"  src="js/wasi_util.js"></script>
   <script type="text/javascript"  src="js/survey.js"></script>
 
@@ -63,7 +64,7 @@
     		</thead>
     			<tbody data-bind="foreach: surveyList">
     				<tr>
-    					<td><a class="button button-primary" href="#" data-bind="click: $parent.viewSurvey">View</a>
+    					<td><a class="button button-primary" href="#" data-bind="click: $parent.viewSurvey">View</a></td>
     					<td data-bind="text:surveyDate"></td>
     					<td data-bind="text:surveyName"></td>
     					<td data-bind="text:percentCompleted"></td>
