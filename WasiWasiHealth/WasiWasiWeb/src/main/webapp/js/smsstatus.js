@@ -1,11 +1,9 @@
 
 $(document).ready(function() {
-	document.onmousemove = function(e){
 	
 		$.getJSON("/some/url", function(data) { 
 			populateTableList(data);
-		}
-		})
+		});
 });
 
 
