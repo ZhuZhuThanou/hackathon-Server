@@ -1,8 +1,3 @@
-#No change? Right or wrong
-#kklllll
-#
-#This is a test
-# yes
 # Postgresql
 # Data name: wasiwasidb
 # User Id: wasiwasi
