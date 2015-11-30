@@ -8,6 +8,8 @@ This project requires to the following to be installed
 2. PostgreSQL 9.x http://www.postgresql.org/
 3. Tomcat http://tomcat.apache.org/
 
+The project uses Java, Spring MVC and JdbcTemplate. Maven is used to structure the project with a parent project and a web module. The Android is not included currently as it requires more work.
+
 - For development, create the database with the following specifications:
 
 ```
